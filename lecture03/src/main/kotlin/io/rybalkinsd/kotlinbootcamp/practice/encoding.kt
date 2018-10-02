@@ -10,7 +10,8 @@ val alphabet = setOf("Alfa", "Bravo", "Charlie", "Delta", "Echo", "Foxtrot", "Go
  * A mapping for english characters to phonetic alphabet.
  * [ a -> Alfa, b -> Bravo, ...]
  */
-val association: Map<Char, String> = TODO()
+val association: Map<Char, String> = alphabet.associateBy {it[0].toLowerCase()
+}
 
 /**
  * Extension function for String which encode it according to `association` mapping
@@ -21,7 +22,7 @@ val association: Map<Char, String> = TODO()
  * "abc".encode() == "AlfaBravoCharlie"
  *
  */
-fun String.encode(): String = TODO()
+fun String.encode(): String = map { it.toLowerCase()}.map{association[it] ?: it}.joinToString("")
 
 /**
  * A reversed mapping for association
