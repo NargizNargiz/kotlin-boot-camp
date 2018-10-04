@@ -59,6 +59,7 @@ fun decodeRecursive(pref: String, suf: String, acc: String): String {
 fun onlyAlphChars(str: String) = str.fold(true) { acc, el -> (if (el !in '0'..'9') true else false) and acc }
 
 fun String.decode(): String? {
+    fromMap = ""
     val result = decodeRecursive("", this, "")
     val res = result.filter { it !in fromMap }
     if (res.isEmpty())
