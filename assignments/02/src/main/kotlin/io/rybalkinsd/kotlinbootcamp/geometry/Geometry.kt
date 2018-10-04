@@ -4,15 +4,19 @@ package io.rybalkinsd.kotlinbootcamp.geometry
  * Entity that can physically intersect, like flame and player
  */
 interface Collider {
-    fun isColliding(other: Collider): Boolean
+    fun isColliding(other: Point): Boolean
+   // fun isColliding(other: Bar): Boolean
 }
 
 /**
  * 2D point with integer coordinates
  */
-class Point(x: Int, y: Int) : Collider {
-    override fun isColliding(other: Collider): Boolean {
-        TODO("not implemented")
+data class Point(val x: Int, val y: Int) : Collider {
+    override fun isColliding(p: Point): Boolean {
+        if (p === this)
+            return true
+        else
+            return ((p.x == x) and (p.y == y))
     }
 }
 
@@ -22,8 +26,8 @@ class Point(x: Int, y: Int) : Collider {
  * Bar is not oriented
  * (It does not matter, which opposite corners you choose to define bar)
  */
-class Bar(firstCornerX: Int, firstCornerY: Int, secondCornerX: Int, secondCornerY: Int) : Collider {
-    override fun isColliding(other: Collider): Boolean {
+data class Bar(val firstCornerX: Int, val firstCornerY: Int, val secondCornerX: Int, val secondCornerY: Int) : Collider {
+    override fun isColliding(other: Point): Boolean {
         TODO("not implemented")
     }
 }
