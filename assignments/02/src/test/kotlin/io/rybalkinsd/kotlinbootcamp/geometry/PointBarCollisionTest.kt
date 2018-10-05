@@ -1,6 +1,5 @@
 package io.rybalkinsd.kotlinbootcamp.geometry
 
-/*
 import org.junit.Assert.assertFalse
 import org.junit.Assert.assertTrue
 import org.junit.Test
@@ -15,7 +14,6 @@ class PointBarCollisionTest {
         assertTrue(bar.isColliding(point))
         assertTrue(point.isColliding(bar))
     }
-
     @Test
     fun `point on corner of bar`() {
         val bar = Bar(0, 0, 100, 100)
@@ -56,4 +54,3 @@ class PointBarCollisionTest {
         assertFalse(point.isColliding(bar))
     }
 }
-*/

@@ -12,8 +12,6 @@ class PointPointCollisionTest {
         val point2 = Point(100, 100)
         assertEquals(point1, point2)
     }
-
-
     @Test
     fun `point self collide`() {
         val point = Point(100, 100)
