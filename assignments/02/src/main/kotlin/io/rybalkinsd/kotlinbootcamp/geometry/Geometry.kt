@@ -10,7 +10,7 @@ interface Collider<T> {
  * 2D point with integer coordinates
  */
 data class Point(val x: Int, val y: Int) : Collider<Point> {
-    override fun isColliding(obj: Point): Boolean = if (obj === this) true else ((obj.x == x) and (obj.y == y))
+    override fun isColliding(obj: Point): Boolean = (obj === this) or ((obj.x == x) and (obj.y == y))
 }
 
 /**
@@ -21,7 +21,10 @@ data class Point(val x: Int, val y: Int) : Collider<Point> {
  */
 data class Bar(val firstCornerX: Int, val firstCornerY: Int, val secondCornerX: Int, val secondCornerY: Int) : Collider<Bar> {
     override fun isColliding(obj: Bar): Boolean {
-        TODO("not implemented")
+        if (obj === this)
+            return true
+        return false
+
     }
 }
 fun Point.isColliding(obj: Bar): Boolean = TODO()
