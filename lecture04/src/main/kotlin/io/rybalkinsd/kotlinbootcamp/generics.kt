@@ -41,3 +41,5 @@ fun <T> List<T>.inbox(): List<Box<T>> = map { Box(it) }
 
 
 class SafeBox<T : Any>(val value: T)
+//нельзя засунуть null
+//
