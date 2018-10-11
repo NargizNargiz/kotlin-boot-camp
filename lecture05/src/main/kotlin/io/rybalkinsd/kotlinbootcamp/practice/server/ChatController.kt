@@ -60,7 +60,6 @@ class ChatController {
      */
     //TODO
 
-
     /**
      * curl -i localhost:8080/chat/chat
      */
