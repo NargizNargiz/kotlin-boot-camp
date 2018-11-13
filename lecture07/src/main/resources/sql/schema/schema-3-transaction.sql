@@ -21,4 +21,4 @@ create table chat.message (
   primary key (id)
 );
 
-commit;
+commit; // добавление транзакции

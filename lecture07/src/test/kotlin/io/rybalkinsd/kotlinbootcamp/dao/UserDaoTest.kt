@@ -32,7 +32,7 @@ class UserDaoTest {
     }
 
     @Test
-    fun `select * from User`() {
+    fun `select all from User`() {
         transaction {
             addLogger(StdOutSqlLogger)
 
